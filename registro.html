@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regístrate — Multicargo Express ISE</title>
+<link rel="icon" type="image/png" sizes="48x48" href="https://multicargoexpressise.com/images/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://multicargoexpressise.com/images/apple-touch-icon.png">
+<meta property="og:title" content="Crea tu casillero gratis — Multicargo Express ISE">
+<meta property="og:description" content="Regístrate y recibe al instante tu código de casillero y tus direcciones en Estados Unidos y Colombia.">
+<meta property="og:image" content="https://multicargoexpressise.com/images/logo-512.png">
+<meta property="og:url" content="https://multicargoexpressise.com/registro.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0a1730;
+    --red:#d0212f;
+    --blue:#2e9fd8;
+    --blue-light:#8ad4f4;
+    --ice:#f5f7fb;
+    --gray:#64748b;
+    --white:#ffffff;
+    --text:#1b2740;
+    --radius:20px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',sans-serif;color:var(--text);background:var(--ice);line-height:1.6;}
+  h1,h2{font-family:'Poppins',sans-serif;margin:0;line-height:1.2;}
+  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 16px;}
+  .card{width:100%;max-width:520px;background:var(--white);border-radius:var(--radius);box-shadow:0 30px 70px -25px rgba(10,23,48,.25);overflow:hidden;}
+  .card-head{background:linear-gradient(160deg,var(--navy),#122a52);padding:36px 40px;color:#fff;text-align:center;}
+  .brand{display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:800;font-size:1.05rem;margin-bottom:14px;}
+  .brand img{height:34px;width:auto;}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--blue-light);}
+  .card-head h1{font-size:1.4rem;}
+  .card-head p{color:#c7d2e6;font-size:.9rem;margin-top:8px;}
+  .card-body{padding:34px 40px 40px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:.78rem;font-weight:700;color:#3a4763;margin-bottom:7px;letter-spacing:.02em;text-transform:uppercase;}
+  .field input,.field select{width:100%;padding:13px 15px;border-radius:10px;border:1.5px solid #dde3ee;font-family:inherit;font-size:.95rem;background:#fff;transition:border-color .2s;}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--blue);}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .svc-toggle{display:flex;gap:10px;}
+  .svc-toggle button{flex:1;padding:12px;border-radius:10px;border:1.5px solid #dde3ee;background:#fff;color:var(--gray);font-weight:700;font-size:.86rem;cursor:pointer;transition:.2s;}
+  .svc-toggle button.active{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:#fff;border-color:transparent;}
+  .svc-toggle button:disabled{opacity:.35;cursor:not-allowed;}
+  .btn{width:100%;padding:15px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--red),#e8434f);color:#fff;font-weight:800;font-size:1rem;cursor:pointer;margin-top:8px;transition:transform .15s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+  .msg{margin-top:16px;padding:14px 16px;border-radius:10px;font-size:.88rem;display:none;}
+  .msg.error{background:#fdecec;color:#9c1c26;display:block;}
+  .result{display:none;text-align:center;}
+  .result .check{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#5fd68a,#2e9fd8);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+  .result .check svg{width:28px;height:28px;color:#fff;}
+  .result h2{font-size:1.25rem;margin-bottom:8px;}
+  .result p{color:var(--gray);font-size:.92rem;}
+  .code-box{background:var(--ice);border:1.5px dashed var(--blue);border-radius:14px;padding:20px;margin:20px 0;}
+  .code-box .lbl{font-size:.75rem;text-transform:uppercase;color:var(--gray);font-weight:700;letter-spacing:.06em;}
+  .code-box .val{font-family:'Poppins',sans-serif;font-size:2rem;font-weight:800;color:var(--navy);margin-top:6px;}
+  .note{font-size:.82rem;color:var(--gray);margin-top:18px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="card-head">
+      <a href="index.html" style="display:inline-block;color:#c7d2e6;font-size:.82rem;text-decoration:none;margin-bottom:14px;">← Volver al inicio</a>
+      <div class="brand"><img src="images/logo-isotipo.png" alt="Logo Multicargo Express ISE"> MULTICARGO EXPRESS ISE</div>
+      <h1>Crea tu casillero</h1>
+      <p>Completa tus datos y recibe tu código y dirección de envío al instante por correo.</p>
+    </div>
+    <div class="card-body">
+
+      <form id="regForm">
+        <div class="row2">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" required placeholder="Ej. María">
+          </div>
+          <div class="field">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" required placeholder="Ej. Rodríguez">
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Correo</label>
+          <input type="email" id="email" required placeholder="tucorreo@email.com">
+        </div>
+        <div class="field">
+          <label for="telefono">WhatsApp</label>
+          <input type="tel" id="telefono" required placeholder="+507 6000 0000">
+        </div>
+        <div class="field">
+          <label>Tipo de identificación</label>
+          <div class="svc-toggle">
+            <button type="button" class="svc-btn active" data-tipoid="cedula">Cédula</button>
+            <button type="button" class="svc-btn" data-tipoid="pasaporte">Pasaporte</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="numeroId" id="lblNumeroId">Número de cédula</label>
+          <input type="text" id="numeroId" required placeholder="Ej. 8-123-4567">
+        </div>
+        <div class="field">
+          <label for="direccionPanama">Dirección de recibo en Panamá</label>
+          <input type="text" id="direccionPanama" required placeholder="Ej. Villa Lucre, calle 2da, casa 15, Panamá">
+        </div>
+        <button type="submit" class="btn" id="submitBtn">Crear mi casillero</button>
+        <div class="msg error" id="errMsg"></div>
+      </form>
+
+      <div class="result" id="resultBox">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h2>¡Listo! Tu casillero está activo</h2>
+        <p>Te enviamos tu código y dirección completa a tu correo.</p>
+        <div class="code-box">
+          <div class="lbl">Tu código de casillero de cliente</div>
+          <div class="val" id="codigoVal">—</div>
+        </div>
+        <p class="note">Revisa también tu carpeta de spam por si el correo llega ahí. Cualquier duda, escríbenos por WhatsApp.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // ⚠️ Reemplaza esta URL por la que te entregue Google Apps Script al implementar
+  // el proyecto como "Aplicación web" (ver guía de despliegue).
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx37B3iK-Ylcq0SQr12PrqrrzJMHtnKASA4UmIvLNclOBWWfz3QvBE2_TUUF75BZ34/exec';
+
+  let tipoId = 'cedula';
+  const svcBtns = document.querySelectorAll('.svc-btn');
+  const lblNumeroId = document.getElementById('lblNumeroId');
+  const numeroIdInput = document.getElementById('numeroId');
+
+  function updateIdLabel() {
+    if (tipoId === 'cedula') {
+      lblNumeroId.textContent = 'Número de cédula';
+      numeroIdInput.placeholder = 'Ej. 8-123-4567';
+    } else {
+      lblNumeroId.textContent = 'Número de pasaporte';
+      numeroIdInput.placeholder = 'Ej. PA1234567';
+    }
+  }
+  svcBtns.forEach(b => b.addEventListener('click', () => {
+    svcBtns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    tipoId = b.dataset.tipoid;
+    updateIdLabel();
+  }));
+
+  document.getElementById('regForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const errMsg = document.getElementById('errMsg');
+    const submitBtn = document.getElementById('submitBtn');
+    errMsg.style.display = 'none';
+
+    if (SCRIPT_URL.indexOf('PEGA_AQUI') !== -1) {
+      errMsg.textContent = 'El formulario todavía no está conectado al sistema. Sigue la guía de despliegue para pegar la URL de tu Apps Script.';
+      errMsg.style.display = 'block';
+      return;
+    }
+
+    const payload = {
+      nombre: document.getElementById('nombre').value.trim(),
+      apellido: document.getElementById('apellido').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      telefono: document.getElementById('telefono').value.trim(),
+      tipoId: tipoId,
+      numeroId: numeroIdInput.value.trim(),
+      direccionPanama: document.getElementById('direccionPanama').value.trim()
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Creando tu casillero...';
+
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+      const raw = await res.text();
+      let data;
+      try {
+        data = JSON.parse(raw);
+      } catch (parseErr) {
+        const detalle = raw.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160);
+        errMsg.textContent = 'El servidor respondió algo inesperado: ' + (detalle || 'respuesta vacía');
+        errMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Crear mi casillero';
+        return;
+      }
+
+      if (!data.ok) {
+        errMsg.textContent = data.error || 'Ocurrió un error. Intenta de nuevo.';
+        errMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Crear mi casillero';
+        return;
+      }
+
+      document.getElementById('codigoVal').textContent = data.codigo;
+      document.getElementById('regForm').style.display = 'none';
+      document.getElementById('resultBox').style.display = 'block';
+    } catch (err) {
+      errMsg.textContent = 'No se pudo conectar con el servidor (' + err.message + '). Verifica tu conexión e intenta de nuevo.';
+      errMsg.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Crear mi casillero';
+    }
+  });
+</script>
+</body>
+</html>
